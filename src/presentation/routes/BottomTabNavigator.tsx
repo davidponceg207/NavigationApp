@@ -6,6 +6,7 @@ import { globalColors } from '../theme/theme';
 import { Text } from 'react-native-gesture-handler';
 import { TopTabsNavigator } from './TopTabsNavigator';
 import { StackNavigator } from './StackNavigator';
+import { IonIcon } from '../components/shared/IonIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ export const BottomTabNavigator = () => {
         tabBarLabelStyle: {
           marginBottom: 5
         },
+        tabBarActiveTintColor: globalColors.primary,
         sceneStyle: {
           backgroundColor: globalColors.background
         },
@@ -29,9 +31,9 @@ export const BottomTabNavigator = () => {
         }
       }}
     >
-      <Tab.Screen name="Tab1" options={{ title: 'Tab1', tabBarIcon: ({ color }) => (<Text style={{ color }} >Tab1</Text>) }} component={Tab1Screen} />
-      <Tab.Screen name="Tab2" options={{ title: 'Tab2', tabBarIcon: ({ color }) => (<Text style={{ color }} >Tab2</Text>) }} component={TopTabsNavigator} />
-      <Tab.Screen name="Tab3" options={{ title: 'Tab3', tabBarIcon: ({ color }) => (<Text style={{ color }} >Tab3</Text>) }} component={StackNavigator} />
+      <Tab.Screen name="Tab1" options={{ title: 'Tab1', tabBarIcon: ({color}) => (<IonIcon name="alarm-outline" color={color} />) }} component={Tab1Screen} />
+      <Tab.Screen name="Tab2" options={{ title: 'Tab2', tabBarIcon: ({color}) => (<IonIcon name="football-outline" color={color} />) }} component={TopTabsNavigator} />
+      <Tab.Screen name="Tab3" options={{ title: 'Tab3', tabBarIcon: ({color}) => (<IonIcon name="sparkles-outline" color={color} />) }} component={StackNavigator} />
     </Tab.Navigator>
   );
 }
